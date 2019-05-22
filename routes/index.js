@@ -59,7 +59,7 @@ router.get('/pesquisar', function(request, response, next) {
 
 
   
-// criando a nova rota estados.json
+// criando a nova rota estados.json - atualizado em 22052019
 router.get('/estados.json', function(request, response, next) {
    response.send([
       {'SP': 'Sao Paulo'},
