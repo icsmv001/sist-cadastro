@@ -2,7 +2,9 @@ var express = require('express');
 var router = express.Router();
 var Pessoa = require('../modelos/pessoa');
 
-router.get('/', function(request, response, next) {
+
+
+router.get('/SIST_CADASTRO/', function(request, response, next) {
   Pessoa.todos(function(pessoas) {
     response.render('index', { 
       title: 'Node.js com framework express',
@@ -10,6 +12,8 @@ router.get('/', function(request, response, next) {
     });
   });
 });
+
+
 
 router.get('/alterar', function(request, response, next) {
   Pessoa.buscar(request.query.cpf, function(pessoa) {
@@ -33,7 +37,7 @@ router.post('/alterar-pessoa', function(request, response, next) {
   pessoa.endereco   = request.body.endereco;
 
   pessoa.salvar(function(){
-    response.redirect("/");
+    response.redirect("/SIST_CADASTRO/");
   }, request.query.cpfAterar)
 });
 
@@ -43,7 +47,7 @@ router.get('/excluir', function(request, response, next) {
   pessoa.cpf = request.query.cpf;
  // pessoa.excluir(function(pessoas){
    pessoa.excluir(function(){
-    response.redirect("/");
+    response.redirect("/SIST_CADASTRO/");
   })
 
 });
@@ -59,7 +63,7 @@ router.get('/pesquisar', function(request, response, next) {
 
 
   
-// criando a nova rota estados.json - atualizado em 22052019
+// criando a nova rota estados.json
 router.get('/estados.json', function(request, response, next) {
    response.send([
       {'SP': 'Sao Paulo'},
@@ -132,7 +136,7 @@ router.post('/cadastrar-pessoa', function(request, response, next) {
   pessoa.endereco   = request.body.endereco;
 
   pessoa.salvar(function(){
-    response.redirect("/");
+    response.redirect("/SIST_CADASTRO/");
   });
 });
 

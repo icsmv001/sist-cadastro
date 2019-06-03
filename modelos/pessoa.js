@@ -16,7 +16,7 @@ var Pessoa = function(){
     } 
     else 
     {
-      	query = "update  prjprogramador.pessoas3  set nome = '"+this.nome.toUpperCase()+"', sobrenome = '"+this.sobrenome.toUpperCase()+"',cpf       = '"+this.cpf.toUpperCase()+"',telefone  = '"+this.telefon.toUpperCase()+"',	endereco  = '"+this.endereco.toUpperCase()+"' WHERE cpf  LIKE '"+cpfAlteracao.toUpperCase()+"' ";
+      	query = "update  prjprogramador.pessoas3  set nome = '"+this.nome.toUpperCase()+"', sobrenome = '"+this.sobrenome.toUpperCase()+"',cpf       = '"+this.cpf.toUpperCase()+"',telefone  = '"+this.telefone.toUpperCase()+"',	endereco  = '"+this.endereco.toUpperCase()+"' WHERE cpf  LIKE '"+cpfAlteracao.toUpperCase()+"' ";
     }
 
 	App.db.cnn.exec(query, function(dadosRetornadosDaTabela,erro ) {
