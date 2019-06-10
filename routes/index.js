@@ -4,7 +4,7 @@ var Pessoa = require('../modelos/pessoa');
 
 
 
-router.get('/SIST_CADASTRO/', function(request, response, next) {
+router.get('/sist-cadastro/', function(request, response, next) {
   Pessoa.todos(function(pessoas) {
     response.render('index', { 
       title: 'Node.js com framework express',
@@ -37,7 +37,7 @@ router.post('/alterar-pessoa', function(request, response, next) {
   pessoa.endereco   = request.body.endereco;
 
   pessoa.salvar(function(){
-    response.redirect("/SIST_CADASTRO/");
+    response.redirect("/sist-cadastro/");
   }, request.query.cpfAterar)
 });
 
@@ -47,7 +47,7 @@ router.get('/excluir', function(request, response, next) {
   pessoa.cpf = request.query.cpf;
  // pessoa.excluir(function(pessoas){
    pessoa.excluir(function(){
-    response.redirect("/SIST_CADASTRO/");
+    response.redirect("/sist-cadastro/");
   })
 
 });
@@ -136,7 +136,7 @@ router.post('/cadastrar-pessoa', function(request, response, next) {
   pessoa.endereco   = request.body.endereco;
 
   pessoa.salvar(function(){
-    response.redirect("/SIST_CADASTRO/");
+    response.redirect("/sist-cadastro/");
   });
 });
 

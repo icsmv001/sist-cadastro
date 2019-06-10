@@ -83,7 +83,7 @@ Pessoa.buscarPorNome = function(nome, callback){
 
 	App.db.cnn.exec(query, function(dadosRetornadosDaTabela,erro ) {
 	  	if(erro) {
-	  		console.log ("Erro na execução da query (" + query + ")");
+	  		console.log ("Erro na execução na query (" + query + ")");
 	  		callback.call(null, []);
 	  	}
 	    else{		  		
@@ -104,7 +104,7 @@ Pessoa.todos = function(callback){
 	
 	App.db.cnn.exec(query, function(dadosRetornadosDaTabela,erro ) {
 	  	if(erro) {
-	  		console.log ("Erro na execução da query (" + query + ")");
+	  		console.log ("Erro na execução na query (" + query + ")");
 	  		callback.call(null, []);
 	  	}
 	    else{		  		
