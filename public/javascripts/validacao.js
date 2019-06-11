@@ -29,7 +29,7 @@ var validacao = function (){
         console.log('de modo algum!'); 
         
         
-        window.location.href="/SIST_CADASTRO/excluir?cpf="+ cpf;
+        window.location.href="/excluir?cpf="+ cpf;
         //debugger
         console.log('deveria pegar a roda /excluir ... ????!');
    
