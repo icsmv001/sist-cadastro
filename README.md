@@ -8,4 +8,11 @@ mas ao chamar abre a tela com erro de rota.
 pendencia:
 identificar o motivo do erro e corrigir
 20190819
+---
+versao em novo branch, para manter versao master funcional
+e no novo branch, realizar manutencao e ajustes para que 
+apos estar funcional seja atualizada na master ou realizado
+merge.
+--- ics.
+
 
