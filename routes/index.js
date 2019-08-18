@@ -4,9 +4,9 @@ var Pessoa = require('../modelos/pessoa');
 
 
 
-router.get('/sist-cadastro/', function(request, response, next) {
+router.get('/', function(request, response, next) {
   Pessoa.todos(function(pessoas) {
-    response.render('index', { 
+    response.render('index', {
       title: 'Node.js com framework express',
       pessoas: pessoas
     });
@@ -17,8 +17,8 @@ router.get('/sist-cadastro/', function(request, response, next) {
 
 router.get('/alterar', function(request, response, next) {
   Pessoa.buscar(request.query.cpf, function(pessoa) {
-    if (pessoa == null) { 
-      console.log("Pessoa não encontrada");
+    if (pessoa == null) {
+      console.log("Pessoa nao encontrada");
       response.render('alterar', {'pessoa': {}})
     }
     else{
@@ -37,7 +37,7 @@ router.post('/alterar-pessoa', function(request, response, next) {
   pessoa.endereco   = request.body.endereco;
 
   pessoa.salvar(function(){
-    response.redirect("/sist-cadastro/");
+    response.redirect("/");
   }, request.query.cpfAterar)
 });
 
@@ -48,22 +48,22 @@ router.get('/excluir', function(request, response, next) {
   pessoa.cpf = request.query.cpf;
  // pessoa.excluir(function(pessoas){
    pessoa.excluir(function(){
-    response.redirect("/sist-cadastro/");
+    response.redirect("/");
   })
 
 });
 
 router.get('/pesquisar', function(request, response, next) {
   Pessoa.buscarPorNome(request.query.nome, function(pessoas) {
-    response.render('index', { 
-      title: 'Pesquisando em arquivos', 
+    response.render('index', {
+      title: 'Pesquisando em arquivos',
       pessoas: pessoas
     });
   });
 });
 
 
-  
+
 // criando a nova rota estados.json
 router.get('/estados.json', function(request, response, next) {
    response.send([
@@ -88,12 +88,12 @@ router.get('/cidades.json', function(request, response, next) {
             'Areal',
             'Armacao dos Buzios'
           ]},
-                        
+
           {'MG': [
              'Belo Horizonte',
              'Borda Da Mata',
              'Extrema'
-          ]} 
+          ]}
       ]
 
       if (request.query.estado != undefined && request.query.estado != "") {
@@ -137,7 +137,7 @@ router.post('/cadastrar-pessoa', function(request, response, next) {
   pessoa.endereco   = request.body.endereco;
 
   pessoa.salvar(function(){
-    response.redirect("/sist-cadastro/");
+    response.redirect("/");
   });
 });
 
